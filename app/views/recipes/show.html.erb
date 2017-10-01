@@ -1,7 +1,7 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<!-- possible syntax error here? /Users/tinadiva/Rails/recipe_db/app/views/recipes/show.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n' r.append=( if @recipe.image? );@output_buffer.safe_append=' ^ /Users/tinadiva/Rails/recipe_db/app/views/recipes/show.html.erb:5: syntax error, unexpected keyword_end, expecting ')' '.freeze; end ^ /Users/tinadiva/Rails/recipe_db/app/views/recipes/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')' ensure ^ /Users/tinadiva/Rails/recipe_db/app/views/recipes/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')' end ^-->
-<%= if @recipe.image? %>
+<% if @recipe.image? %>
 	<%= image_tag @recipe.image.url, class: "recipe-show" %>
 <% end %>
 
@@ -31,3 +31,4 @@
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
+</div>
