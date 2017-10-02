@@ -1,14 +1,21 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>Recipes</h1>
-
-
-
-    <% @recipes.each do |recipe| %>
-
+<div class="row">
+  <div class="col-md-6">
+  <h1>Recipes</h1>
+  <br>
+   <%= link_to 'Click Here to Enter New Recipe', new_recipe_path %>
+  </div>
+  <div class="col-md-6">
+    <p>Cliche iceland tousled glossier banh mi hammock. Waistcoat man braid sustainable cronut, quinoa tumblr banjo palo santo shoreditch raw denim chicharrones yuccie. VHS pork belly taxidermy, schlitz pug tumblr art party cloud bread. Poke shoreditch letterpress retro affogato. Hot chicken heirloom kinfolk freegan. Hoodie gastropub next level williamsburg vice wolf cloud bread tattooed before they sold out, tote bag slow-carb scenester mixtape iPhone. Single-origin coffee raclette chillwave, cloud bread lumbersexual blue bottle fam keytar pickled crucifix.</p>
+  </div>
+</div><!-- ROW 1 -->
+<br>
+<div class="row">
+  <% @recipes.each do |recipe| %>
     <div class="col-md-4">
-    <div class="recipe-box">
+      <div class="recipe-box">
       <%if recipe.image? %>
       <%= link_to (image_tag recipe.image.url, class: "recipe-index"), recipe%>
       <% end %>
@@ -17,13 +24,9 @@
         <li><%= recipe.description %></li>
         <li><%= link_to 'Show', recipe %> | <%= link_to 'Edit', edit_recipe_path(recipe) %> | <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       </ul>
-    </div><!-- recipe box -->
+      </div><!-- recipe box -->
     </div><!-- col-md-4 -->
-    
-    <% end %>
- 
+  <% end %>
+</div><!-- ROW 2 --> 
 
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
 </div><!-- container -->

@@ -1,33 +1,49 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
-<% if @recipe.image? %>
+	<% if @recipe.image? %>
 	<%= image_tag @recipe.image.url, class: "recipe-show" %>
-<% end %>
+	<% end %>
 
-<p>
+<br>
+<br>
+
+<div class="row">
+<div class="col-md-3">
+<h4>
   <strong>Title:</strong>
+  <br>
   <%= @recipe.title %>
-</p>
+</h4>
+</div>
 
-<p>
+<div class="col-md-3">
+<h4>
   <strong>Description:</strong>
+  <br>
   <%= @recipe.description %>
-</p>
+</h4>
+</div>
 
-<h3>Ingredients</h3>
+<div class="col-md-3">
+<h4>Ingredients</h4>
 <ul>
 	<% for @ingredient in @recipe.ingredients %>
 		<li><%= @ingredient.content %></li>
 	<% end %>
 </ul>
+</div>
 
-<h3>Steps</h3>
+<div class="col-md-3">
+<h4>Steps</h4>
 <ol>
 	<% for @step in @recipe.steps %>
 		<li><%= @step.direction %></li>
 	<% end %>
 </ol>
+</div>
+
+</div><!-- end row -->
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

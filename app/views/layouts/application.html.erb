@@ -8,18 +8,24 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+<div class="container">
+
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <%= link_to "Tina's Recipe App", root_path, class: 'navbar-brand' %>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav navbar-right">
-      <li><%= link_to "About", pages_about_path %></li>
-    </ul>
-  </div>
+<div class="row">
+<%= link_to "Tina's Recipe App", root_path, class: 'navbar-brand' %>
+<br>
+<%= link_to "About", pages_about_path, class: 'navbar-brand', class: 'navbar-right' %>
+</div>
 </nav>
 
   <body>
     <%= yield %>
+    <br>
+    <br>
     <footer>
+      <h4>Footer Info Here</h4>
     </footer>
   </body>
+</div><!-- container -->
+
 </html>

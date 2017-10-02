@@ -1,3 +1,5 @@
+<div class="container">
+
 <%= form_with(model: recipe, local: true) do |form| %>
   <% if recipe.errors.any? %>
     <div id="error_explanation">
@@ -9,46 +11,67 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %><!-- error loop-->
 
+<div class="row">
   <div class="form-group">
+    <h3>Add or Delete Image</h3>
     <%= form.file_field :image %>
     <% if @recipe.image? %>
       <%= image_tag @recipe.image.url, class: "recipe-show" %>
+        <br>
+        <br>
       <%= form.check_box :remove_image %>
         Remove Image
-        <% end %>
-  </div>
+    <% end %><!-- image loop-->
+  </div><!-- image form -->
+</div><!-- image row -->
 
+<div class="row">
   <div class="field">
+    <h3>Add or Update Title</h3>
     <%= form.label :title %>
     <%= form.text_field :title, id: :recipe_title %>
-  </div>
+  </div><!-- title form -->
+</div><!-- title row -->
 
+<div class="row">
   <div class="field">
+    <h3>Add or Update Description</h3>
     <%= form.label :description %>
     <%= form.text_area :description, id: :recipe_description %>
-  </div>
+  </div><!-- column form -->
+</div><!-- description row -->
 
+<div class="row">
   <div class="form-group">
-    <h3>Add Ingredients</h3>
+    <h3>Add or Delete Ingredients</h3>
     <%= form.nested_fields_for :ingredients do |ingredient| %>
     <%= ingredient.text_field :content %>
     <%= ingredient.remove_nested_fields_link %>
-    <% end %>
+    <% end %><!-- ingredients loop -->
     <%= form.add_nested_fields_link :ingredients %>
-  </div>
+  </div><!-- ingredients form -->
+</div><!-- ingredients row -->
 
+<div class="row">
   <div class="form-group">
-    <h3>Add Steps</h3>
+    <h3>Add or Delete Steps</h3>
     <%= form.nested_fields_for :steps do |step| %>
     <%= step.text_field :direction %>
     <%= step.remove_nested_fields_link %>
-    <% end %>
+    <% end %><!-- steps loop -->
     <%= form.add_nested_fields_link :steps %>
-  </div>
+  </div><!-- steps form -->
+</div><!-- steps row -->  
 
+<div class="row">
   <div class="actions">
+    <h3>Create/Update Recipe</h3>
     <%= form.submit %>
   </div>
-<% end %>
+</div><!-- submit row -->
+
+<% end %><!-- end of form -->
+
+</div>
