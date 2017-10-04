@@ -11,7 +11,7 @@
 <div class="container">
 
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-<%= link_to "Tina's Recipe App", root_path, class: 'navbar-brand' %>
+<%= link_to "Home", root_path, class: 'navbar-brand' %>
 <%= link_to "About", pages_about_path, class: 'navbar-brand' %> 
 
 <% if user_signed_in? %>
@@ -23,17 +23,7 @@
 <% end %>
 </nav>
 
-<div class="row">
-<% if notice %>
-  <div class="alert alert-info"><%= notice %></div>
-<% end %>
-</div>
 
-<div class="row">
-<% if alert %>
-  <div class="alert alert-warning"><%= alert %></div>
-<% end %>
-</div>
 
   <body>
     <%= yield %>
